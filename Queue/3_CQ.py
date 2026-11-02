@@ -5,7 +5,6 @@ class Node:
         self.data = value
         self.next = None
 
-
 class CQueue:
     def __init__(self):
         self.front = self.rear = None
@@ -20,18 +19,18 @@ class CQueue:
         self.rear.next = self.front
 
     def dequeue(self):
-        if self.front is None:
+        if self.front is None: 
             print("Queue is empty")
             return
 
         temp = self.front
         print("Deleted:", temp.data)
 
-        if self.front == self.rear:
+        if self.front == self.rear: # only one node in the queue 
             self.front = self.rear = None
         else:
             self.front = self.front.next
-            self.rear.next = self.front
+            self.rear.next = self.front # added for circular queue 
 
     def print(self):
         if self.front is None:
@@ -48,7 +47,6 @@ class CQueue:
                 break
 
         print("(back to front)")
-
 
 Q1 = CQueue()
 
